@@ -1,0 +1,32 @@
+
+print("Hello and thank you for using the Simple Interest Calculator!")
+def get_number(ask):
+    while True:
+        try:
+            number = float(input(ask))
+            if number > 0:
+                return number
+            else: 
+                print("Please enter a positive number to proceed. Try again!")
+        except ValueError:
+            print("That's not a valid input. Please enter a correct value and try again!")
+
+# Take the principal amount from the user
+principal = get_number("Please input the principal amount(P):\n")
+# Get the interest rate from the user
+interest_rate = get_number("Please input the interest rate (R) in percentage:\n")/100
+# Get the time period from the user
+time_period = get_number("Please input the time period (T):\n")
+
+interest_total = 0 # Initialize total interest to 0
+
+# Use a loop to calculate interest for every year
+for year in range(1, int(time_period) + 1):
+    interest = principal * interest_rate # Compute interest for the current year
+    principal += interest # Update the principal amount for the next year
+    interest_total += interest # Accumulate total interest
+    # Display the balance and total interest for the current year
+    print(f"Year {time_period}: Balance = {principal:.2f}, Total Interest = {interest:.2f}")
+        
+# Print the final balance and total interest after the defined time period
+print(f"Eventually, after {time_period} years, your total balance is {principal:.2f} and the total amount of interest added is {interest_total:.2f}.\n")   
