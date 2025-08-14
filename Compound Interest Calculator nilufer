@@ -1,5 +1,5 @@
 
-print("Hello and thank you for using the Simple Interest Calculator!")
+print("Hello and thank you for using the Compound Interest Calculator!")
 def get_number(ask):
     while True:
         try:
